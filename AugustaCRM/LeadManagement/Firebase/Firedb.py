@@ -76,4 +76,3 @@ def get_Call_List():
             rec[i]= dic1
         i = i+1
     return rec
-move_to_call_list()
