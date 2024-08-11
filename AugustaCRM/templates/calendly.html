@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Your Webpage with Calendly</title>
+<link rel="stylesheet" media="screen" href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}">
+<link rel="stylesheet" media="screen" href="{% static 'assets/vendor/aos/dist/aos.css' %}">
+<!-- Main Theme Styles + Bootstrap-->
+<link rel="stylesheet" media="screen" href="{% static 'assets/css/theme.min.css' %}">
+<main class="page-wrapper">
+
+  <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page-->
+  <header class="navbar navbar-expand-lg fixed-top bg-light">
+    <div class="container">
+        {% comment %} <a class="navbar-brand pe-sm-3" href="/">
+            <span class="text-primary flex-shrink-0 me-3">
+                
+                <div class="img-fluid">
+                    <img style="height:35px;" src="{% static 'assets/img/logo/datageekslogo.png' %}">
+                </div> 
+                
+            </span>
+            Augusta Properties
+        </a> {% endcomment %}
+
+        
+
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+          <a class="navbar-brand" href="/">Augusta Properties</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" href="/services">Services</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/services/call-leads">Next call</a>
+                  </li>
+                  {% comment %} <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                  </li> {% endcomment %}
+              </ul>
+       
+
+          </div>
+      </nav>
+        <!-- Toggle dark mode -->
+        <div class="d-flex justify-content-end form-check form-switch mode-switch order-lg-2 me-3 me-lg-4" data-bs-toggle="mode">
+        <input class="form-check-input" type="checkbox" id="theme-mode">
+        <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
+        <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
+        </div>
+        <!-- End toggle dark mode -->
+    </div>
+  </header>
+  <br>
+  <br>
+    <!-- Theme mode-->
+    <script>
+      let mode = window.localStorage.getItem('mode'),
+          root = document.getElementsByTagName('html')[0];
+      if (mode !== undefined && mode === 'dark') {
+        root.classList.add('dark-mode');
+      } else {
+        root.classList.remove('dark-mode');
+      }
+    </script>
+
+
+
+  <style>
+    .page-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
+    }
+    .dark-mode .page-loading {
+      background-color: #121519;
+    }
+    .page-loading.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .page-loading-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+    .page-loading.active > .page-loading-inner {
+      opacity: 1;
+    }
+    .page-loading-inner > span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #6f788b;
+    }
+    .dark-mode .page-loading-inner > span {
+      color: #fff;
+      opacity: .6;
+    }
+    .page-spinner {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: .75rem;
+      vertical-align: text-bottom;
+      background-color: #d7dde2; 
+      border-radius: 50%;
+      opacity: 0;
+      -webkit-animation: spinner .75s linear infinite;
+      animation: spinner .75s linear infinite;
+    }
+    .dark-mode .page-spinner {
+      background-color: rgba(255,255,255,.25);
+    }
+    @-webkit-keyframes spinner {
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
+      50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+    @keyframes spinner {
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
+      50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+    
+  </style>
+
+  <script>
+    (function () {
+      window.onload = function () {
+        const preloader = document.querySelector('.page-loading');
+        preloader.classList.remove('active');
+        setTimeout(function () {
+          preloader.remove();
+        }, 1500);
+      };
+    })();
+    
+  </script>
+
+</head>
+<body>
+
+  <!-- Page loading spinner-->
+  <div class="page-loading active">
+    <div class="page-loading-inner">
+      <div class="page-spinner"></div><span>Loading...</span>
+    </div>
+  </div>
+<!-- Your website content goes here -->
+
+
+
+
+
+
+
+
+<div
+class="calendly-inline-widget"
+data-url="https://calendly.com/rishidwd29"
+style="min-width: 320px; height:630px;"
+></div>
+
+
+
+
+
+<script
+type="text/javascript"
+src="https://assets.calendly.com/assets/external/widget.js"
+></script>
+
+
+
+ <!-- Vendor scripts: JS libraries and plugins -->
+ <script src="{% static 'assets/vendor/parallax-js/dist/parallax.min.js' %}"></script>
+ <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+ <script src="{% static 'assets/vendor/aos/dist/aos.js' %}"></script>
+
+ <!-- Bootstrap + Theme scripts -->
+ <script src="{% static 'assets/js/theme.min.js' %}"></script>
+
+</body>
+</html>
