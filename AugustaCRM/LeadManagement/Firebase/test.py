@@ -19,30 +19,30 @@ auth_fb = firebase.auth()
 db = firebase.database()
 
 now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-data = {"Created":now, "Email":"rkdk23@gmail.com", "Name": "Raj", "phone": "+9156473126", "Platform": "in", "status": "pending"}
-# db.child("New Leads").push(data)
+data = {"Created":now, "Email":"rishidwd29@gmail.com", "Name": "Rishi", "phone": "+9156473126", "Platform": "fb"}
+db.child("New Leads").push(data)
 # point=db.child("leads_details").child("email").get()
 # # point= db.child("local_test").child("lead_details").child("email").get()
 # email = point.val()
 # print(email)
-result = db.child("New Leads").get()
-result = result.val()
+# result = db.child("New Leads").get()
+# result = result.val()
 # rec=result.val()
 # print(rec)
 # for traversing and storing values
-i = 0
-rec={}
-for key, value in result.items():
-    # print(f"Key: {key}")
-    dic1 = {}
-    for sub_key, sub_value in value.items():
+# i = 0
+# rec={}
+# for key, value in result.items():
+#     # print(f"Key: {key}")
+#     dic1 = {}
+#     for sub_key, sub_value in value.items():
         
-        dic2= {sub_key:sub_value}
-        dic1 = dic1 | dic2
-        rec[i]= dic1
-    i = i+1
+#         dic2= {sub_key:sub_value}
+#         dic1 = dic1 | dic2
+#         rec[i]= dic1
+#     i = i+1
 
-print(rec[3])
+
 
 
 # count = len(rec.keys())

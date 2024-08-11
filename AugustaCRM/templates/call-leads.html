@@ -261,7 +261,7 @@
       '> {% endcomment %}
 
       <div class="card text-center">
-        <div class="h3 card-header">Call Leads</div>
+        <div class="h3 card-header">New Call Leads</div>
         <div class="card-body">
           <h4 class="card-title">Lead Information</h4>
           <p class="card-text">{{name}}</p>
@@ -272,7 +272,7 @@
           <p class="card-text">Source: {{source}}</p>
           {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
           <div class="btn-group" role="group" aria-label="Outline button group">
-            <button type="button" class="btn btn-outline-primary"><a href="calendly/"><i class="ai-calendar"></i></button></a>
+            {% comment %} <button type="button" class="btn btn-outline-primary"><a href="calendly/"><i class="ai-calendar"></i></button></a> {% endcomment %}
             <button type="button" class="btn btn-outline-primary"><a href="tel:7607762599"><i class="ai-phone-call"></i></button></a>
             <button type="button" class="btn btn-outline-primary"><a href="result-log/"><i class="ai-phone-x"></i></button></a>
           </div>

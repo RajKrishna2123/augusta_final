@@ -22,6 +22,11 @@ urlpatterns = [
     path('',views.index,name = "Home"),
     path('services/',views.services, name = "services"),
     path('services/call-leads/',views.CallLeads, name = "call-leads"),
+    path('services/call-leads/call-list/',views.CallList, name = "call-list"),
+    # processing url
+    path('services/call-leads/call/',views.Call),
+
+    path('services/call-leads/call-result/',views.CallResult, name = "call-result"),
     path('services/call-leads/calendly/',views.calendly, name = "calendly"),
     path('services/call-leads/result-log/',views.ResultLog, name = "call-result-log"),
     path('services/call-leads/result-log/call-back/',views.CallBackLater),
