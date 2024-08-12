@@ -36,7 +36,7 @@ def newleadlist():
             i = i+1
         return rec
     except:
-        pass
+        redirect('/empty-newleads')
 
 def move_to_call_list(str):
     result = db.child("New Leads").get()
