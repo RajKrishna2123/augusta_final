@@ -20,8 +20,8 @@ from . import views
 
 urlpatterns = [
     path('',views.index,name = "Home"),
-    path('empty-newleads',views.EmptyNewLeads,name = "empty new leads"),
-    path('empty-call-list',views.EmptyCallList,name = "empty call list"),
+    path('empty-newleads/',views.EmptyNewLeads,name = "empty new leads"),
+    path('empty-call-list/',views.EmptyCallList,name = "empty call list"),
 
     path('services/',views.services, name = "services"),
     path('services/call-leads/',views.CallLeads, name = "call-leads"),
