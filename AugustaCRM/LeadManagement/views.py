@@ -72,25 +72,28 @@ def CallLeads(request):
     return render(request, "call-leads.html")
 
 def NewLeads(request):
-    rec = newleadlist()
-    if not rec:
-        return redirect('/empty-newlead')
-
-
+    try:
+        rec = newleadlist()
+        if not rec:
+            return redirect('/empty-newlead')
     
-    point = rec[new_rec_num]
     
-    # point= db.child("local_test").child("lead_details").child("email").get()
-    email = point["Email"]
-    # point= db.child("local_test").child("lead_details").child("name").get()
-    name =  point["Name"]
-    # point= db.child("local_test").child("lead_details").child("name").get()
-    phone = point["phone"]
-    # point= db.child("local_test").child("lead_details").child("name").get()
-    time = point["Created"]
-    # point= db.child("local_test").child("lead_details").child("name").get()
-    source = point["Platform"]
-    return render(request, "new-leads.html", {"email": email, "name": name, "phone": phone, "time": time, "source": source})
+        
+        point = rec[new_rec_num]
+        
+        # point= db.child("local_test").child("lead_details").child("email").get()
+        email = point["Email"]
+        # point= db.child("local_test").child("lead_details").child("name").get()
+        name =  point["Name"]
+        # point= db.child("local_test").child("lead_details").child("name").get()
+        phone = point["phone"]
+        # point= db.child("local_test").child("lead_details").child("name").get()
+        time = point["Created"]
+        # point= db.child("local_test").child("lead_details").child("name").get()
+        source = point["Platform"]
+        return render(request, "new-leads.html", {"email": email, "name": name, "phone": phone, "time": time, "source": source})
+    except:
+        redirect('/empty-newleads')
 def Newcalendly(request):
     new_rec_num = 0
     move_to_archive("booked")
@@ -118,16 +121,19 @@ def NewInvalid(request):
     return redirect('services/call-leads/new-leads')
 
 def CallList(request):
-    rec = get_Call_List()
-    point = rec[rec_num]
-
-    email = point["Email"]
-    name =  point["Name"]
-    phone = point["phone"]
-    time = point["Created"]
-    source = point["Platform"]
+    try:
+        rec = get_Call_List()
+        point = rec[rec_num]
     
-    return render(request, "call-list.html", {"email": email, "name": name, "phone": phone, "time": time, "source": source})
+        email = point["Email"]
+        name =  point["Name"]
+        phone = point["phone"]
+        time = point["Created"]
+        source = point["Platform"]
+        
+        return render(request, "call-list.html", {"email": email, "name": name, "phone": phone, "time": time, "source": source})
+    except:
+        redirect('/empty-call-list')
 
 def CallResult(request):
     
