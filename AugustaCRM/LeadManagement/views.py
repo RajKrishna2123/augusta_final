@@ -144,26 +144,29 @@ def Call(request):
 
 
 def calendly(request):
-    rec_num=0
-    result = db.child("Call List").get()
-    result = result.val()
-    rkey=""
-    rec = get_Call_List()
-    point = rec[0]
-    attempt_no = point["Attempt_no"]
-    # phone = point["phone"]
-    for key, value in result.items():
-        rkey = key
-        break
-    attempt_no = attempt_no +1
-    now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    db.child("Call List").child(rkey).update({"Attempt_no": attempt_no})
-    db.child("Call List").child(rkey).update({"Attempted": now})
-    db.child("Call List").child(rkey).update({"status": "Booked"})
-    db.child("Archived").push(point)
-    db.child("Call List").child(rkey).remove()
-
-    return render(request, "calendly.html")
+    try:
+        rec_num=0
+        result = db.child("Call List").get()
+        result = result.val()
+        rkey=""
+        rec = get_Call_List()
+        point = rec[0]
+        attempt_no = point["Attempt_no"]
+        # phone = point["phone"]
+        for key, value in result.items():
+            rkey = key
+            break
+        attempt_no = attempt_no +1
+        now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        db.child("Call List").child(rkey).update({"Attempt_no": attempt_no})
+        db.child("Call List").child(rkey).update({"Attempted": now})
+        db.child("Call List").child(rkey).update({"status": "Booked"})
+        db.child("Archived").push(point)
+        db.child("Call List").child(rkey).remove()
+    
+        return render(request, "calendly.html")
+    except:
+        redirect('/empty-call-list')
 
 
 def ResultLog(request):
