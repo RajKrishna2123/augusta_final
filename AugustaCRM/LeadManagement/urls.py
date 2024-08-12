@@ -31,7 +31,7 @@ urlpatterns = [
     path('services/call-leads/new-callback/',views.NewCallBack),
     path('services/call-leads/new-notanswred/',views.NewNotAnswred),
     path('services/call-leads/new-notintrested/',views.NewNotIntrested),
-    path('services/call-leads/new-notintrested/',views.NewInvalid),
+    path('services/call-leads/new-Invalid',views.NewInvalid),
 
 
     path('services/call-leads/call-list/',views.CallList, name = "call-list"),
