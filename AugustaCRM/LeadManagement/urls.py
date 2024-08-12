@@ -20,18 +20,34 @@ from . import views
 
 urlpatterns = [
     path('',views.index,name = "Home"),
+    path('/empty-newleads',views.EmptyNewLeads,name = "empty new leads"),
+    path('/empty-call-list',views.EmptyCallList,name = "empty call list"),
+
     path('services/',views.services, name = "services"),
     path('services/call-leads/',views.CallLeads, name = "call-leads"),
+    path('services/call-leads/new-leads/',views.NewLeads, name = "call-leads"),
+    # new leads log processing
+    path('services/call-leads/new-calendly/',views.Newcalendly, name = "new-calendly"),
+    path('services/call-leads/new-callback/',views.NewCallBack),
+    path('services/call-leads/new-notanswred/',views.NewNotAnswred),
+    path('services/call-leads/new-notintrested/',views.NewNotIntrested),
+    path('services/call-leads/new-notintrested/',views.NewInvalid),
+
+
     path('services/call-leads/call-list/',views.CallList, name = "call-list"),
     # processing url
     path('services/call-leads/call/',views.Call),
-
-    path('services/call-leads/call-result/',views.CallResult, name = "call-result"),
+    # result log processing
+    # path('services/call-leads/call-result/',views.CallResult, name = "call-result"),
     path('services/call-leads/calendly/',views.calendly, name = "calendly"),
-    path('services/call-leads/result-log/',views.ResultLog, name = "call-result-log"),
+    # path('services/call-leads/result-log/',views.ResultLog, name = "call-result-log"),
     path('services/call-leads/result-log/call-back/',views.CallBackLater),
     path('services/call-leads/result-log/not-answered/',views.NotAnswered),
     path('services/call-leads/result-log/not-intrested/',views.NotIntrested),
+    path('services/call-leads/result-log/invalid/',views.Invalid),
+
+    
+
     
      
 ]

@@ -19,7 +19,7 @@ auth_fb = firebase.auth()
 db = firebase.database()
 
 now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-data = {"Created":now, "Email":"rishidwd29@gmail.com", "Name": "Rishi", "phone": "+9156473126", "Platform": "fb"}
+data = {"Created":now, "Email":"daniel123@gmail.com", "Name": "Daniel", "phone": "+9156473126", "Platform": "fb"}
 db.child("New Leads").push(data)
 # point=db.child("leads_details").child("email").get()
 # # point= db.child("local_test").child("lead_details").child("email").get()

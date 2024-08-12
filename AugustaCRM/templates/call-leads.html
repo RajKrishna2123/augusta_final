@@ -222,8 +222,6 @@
                             <a class="nav-link" href="#">Pricing</a>
                         </li> {% endcomment %}
                     </ul>
-                    
-
                 </div>
             </nav>
             <div class="d-flex justify-content-end form-check form-switch mode-switch order-lg-2 me-3 me-lg-4" data-bs-toggle="mode">
@@ -261,21 +259,29 @@
       '> {% endcomment %}
 
       <div class="card text-center">
-        <div class="h3 card-header">New Call Leads</div>
+        <div class="h3 card-header">Call List</div>
         <div class="card-body">
-          <h4 class="card-title">Lead Information</h4>
+
+          
+
+          {% comment %} <h4 class="card-title">Lead Information</h4>
           <p class="card-text">{{name}}</p>
           <p class="card-text">{{email}}</p>
           <p class="card-text">{{phone}}</p>
           <br>
           <p class="card-text">Created at: {{time}}</p>
-          <p class="card-text">Source: {{source}}</p>
+          <p class="card-text">Source: {{source}}</p> {% endcomment %}
           {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
-          <div class="btn-group" role="group" aria-label="Outline button group">
-            {% comment %} <button type="button" class="btn btn-outline-primary"><a href="calendly/"><i class="ai-calendar"></i></button></a> {% endcomment %}
-            <button type="button" class="btn btn-outline-primary"><a href="tel:7607762599"><i class="ai-phone-call"></i></button></a>
-            <button type="button" class="btn btn-outline-primary"><a href="result-log/"><i class="ai-phone-x"></i></button></a>
-          </div>
+          
+          <a href ="/services/call-leads/new-leads/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">New Leads</button></a>
+          <a href ="/services/call-leads/call-list/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">Call List</button></a>
+          
+          {% comment %} <a href ="/services/call-leads/calendly/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">calender</button></a>
+          <a href ="/services/call-leads/result-log/call-back/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">call back later</button></a>
+          <a href ="/services/call-leads/result-log/not-answered/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">not Answered</button></a>
+          <a href ="/services/call-leads/result-log/not-intrested/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">Not Intrested</button></a>
+          <a href ="/services/call-leads/result-log/invalid/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">Invalid Number</button></a> {% endcomment %}
+          
         </div>
         <div class="card-footer fs-sm text-body-secondary">End</div>
       </div>
@@ -290,7 +296,15 @@
           <i class="ai-arrow-up"></i>
         </a>
     
-    
+        <style>
+          .fixed-size-button {
+            width: 150px;  /* Set the desired width */
+            height: 50px;  /* Set the desired height */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+          }
+        </style>
         <!-- Vendor scripts: JS libraries and plugins -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

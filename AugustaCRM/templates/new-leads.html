@@ -215,6 +215,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/services">Services</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/services/call-leads/call-list/">New Leads</a>
+                        </li>
+                        {% comment %} <li class="nav-item">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/services">Services</a>
+                        </li>
                         {% comment %} <li class="nav-item">
                             <a class="nav-link" href="#">Features</a>
                         </li>
@@ -238,7 +245,8 @@
          <nav aria-label="breadcrumb">
           <ol class="pt-lg-3 pb-lg-4 pb-2 breadcrumb">
             <li class="breadcrumb-item"><a href="/services">Services</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Call Leads</li>
+            <li class="breadcrumb-item " aria-current="page">Call Leads</li>
+            <li class="breadcrumb-item active" aria-current="page">New Leads</li>
             <!-- <li class="breadcrumb-item active" aria-current="page">Single post v.2</li> -->
           </ol>
         </nav> 
@@ -259,7 +267,7 @@
       '> {% endcomment %}
 
       <div class="card text-center">
-        <div class="h3 card-header">Call List</div>
+        <div class="h3 card-header">New Leads</div>
         <div class="card-body">
           <h4 class="card-title">Lead Information</h4>
           <p class="card-text">{{name}}</p>
@@ -273,10 +281,10 @@
           <a href ="tel:{{phone}}"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">Call</button></a>
           <br>
           <a href ="/services/call-leads/calendly/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">calender</button></a>
-          <a href ="/services/call-leads/result-log/call-back/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">call back later</button></a>
-          <a href ="/services/call-leads/result-log/not-answered/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">not Answered</button></a>
-          <a href ="/services/call-leads/result-log/not-intrested/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">Not Intrested</button></a>
-          <a href ="/services/call-leads/result-log/invalid/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">Invalid Number</button></a>
+          <a href ="/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">call back later</button></a>
+          <a href ="/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">not Answered</button></a>
+          <a href ="/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">Not Intrested</button></a>
+          <a href ="/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">Invalid Number</button></a>
           
         </div>
         <div class="card-footer fs-sm text-body-secondary">End</div>

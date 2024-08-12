@@ -215,6 +215,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/services">Services</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/services/call-leads/call-list/">Call List</a>
+                        </li>
+                        {% comment %} <li class="nav-item">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/services">Services</a>
+                        </li>
                         {% comment %} <li class="nav-item">
                             <a class="nav-link" href="#">Features</a>
                         </li>
@@ -235,13 +242,14 @@
       <br>
       <section class="container py-5 mt-3 mb-md-1 mb-lg-1 mb-xl-1">
          <!-- Breadcrumb -->
-         <nav aria-label="breadcrumb">
+         {% comment %} <nav aria-label="breadcrumb">
           <ol class="pt-lg-3 pb-lg-4 pb-2 breadcrumb">
             <li class="breadcrumb-item"><a href="/services">Services</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Call Leads</li>
+            <li class="breadcrumb-item " aria-current="page">Call Leads</li>
+            <li class="breadcrumb-item active" aria-current="page">New Leads</li>
             <!-- <li class="breadcrumb-item active" aria-current="page">Single post v.2</li> -->
           </ol>
-        </nav> 
+        </nav>  {% endcomment %}
       </section>
       {% comment %} <h2 class="h1 text-center pb-3 pb-lg-4">Call leads</h2>
       <div class="swiper" data-swiper-options='
@@ -261,22 +269,11 @@
       <div class="card text-center">
         <div class="h3 card-header">Call List</div>
         <div class="card-body">
-          <h4 class="card-title">Lead Information</h4>
-          <p class="card-text">{{name}}</p>
-          <p class="card-text">{{email}}</p>
-          <p class="card-text">{{phone}}</p>
-          <br>
-          <p class="card-text">Created at: {{time}}</p>
-          <p class="card-text">Source: {{source}}</p>
-          {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
           
-          <a href ="tel:{{phone}}"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">Call</button></a>
-          <br>
-          <a href ="/services/call-leads/calendly/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">calender</button></a>
-          <a href ="/services/call-leads/result-log/call-back/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">call back later</button></a>
-          <a href ="/services/call-leads/result-log/not-answered/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">not Answered</button></a>
-          <a href ="/services/call-leads/result-log/not-intrested/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">Not Intrested</button></a>
-          <a href ="/services/call-leads/result-log/invalid/"><button type="button" class="btn btn-outline-primary mb-2 fixed-size-button">Invalid Number</button></a>
+          <h2 class text-center>New Leads is empty</h2>
+          <p class text-center>go to call list to get more leads</p>
+          
+          
           
         </div>
         <div class="card-footer fs-sm text-body-secondary">End</div>
