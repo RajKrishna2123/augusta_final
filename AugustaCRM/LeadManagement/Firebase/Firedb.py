@@ -11,7 +11,7 @@ import os
     'storageBucket': str(os.getenv('FIREBASE_STORAGE_BUCKET')),
     'messagingSenderId': str(os.getenv('FIREBASE_MESSAGING_SENDER_ID')),
     'appId': str(os.getenv('FIREBASE_APP_ID')),
-    'measurementId': str(os.getenv('FIREBASE_MEASUREMENT_ID')),
+   
 } '''
 FIREBASE_CONFIG = {
     'apiKey': 'AIzaSyC1TfBBNAsC7IBP32ES24IQs2AAqm4zVwM',
