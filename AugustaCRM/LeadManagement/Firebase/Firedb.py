@@ -20,11 +20,11 @@ db = firebase.database()
 
 
 def newleadlist():
-    result = db.child("New Leads").get()
-    result = result.val()
-    i = 0
-    rec={}
     try:
+         result = db.child("New Leads").get()
+        result = result.val()
+        i = 0
+        rec={}
         for key, value in result.items():
             # print(f"Key: {key}")
             dic1 = {}
