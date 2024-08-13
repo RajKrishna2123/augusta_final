@@ -101,6 +101,8 @@ def get_Call_List():
     try:
         result = db.child("Call List").get()
         result = result.val()
+        if not result :
+            redirect('/empty-call-list')
         i = 0
         rec={}
         for key, value in result.items():
